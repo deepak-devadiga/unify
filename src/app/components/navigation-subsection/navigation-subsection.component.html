@@ -1,0 +1,33 @@
+<div class="subsections-wrapper">
+  <ng-container *ngFor="let subsection of subsections">
+    <div *ngIf="subsection.subsections?.length" class="nested-section">
+      <div class="nested-section-header">
+        <span class="nested-section-icon">{{ subsection.icon }}</span>
+        <h4 class="nested-section-title">{{ subsection.title }}</h4>
+      </div>
+      <div class="tiles-grid nested-subsections-grid">
+        <ng-container *ngFor="let item of subsection.subsections">
+          <a
+            *ngIf="item.route"
+            [routerLink]="item.route"
+            class="tile subsection-tile"
+            [ngClass]="item.color"
+          >
+            <div class="tile-icon">{{ item.icon }}</div>
+            <div class="tile-label">{{ item.title }}</div>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+
+    <div
+      *ngIf="!subsection.subsections?.length && subsection.route"
+      class="tiles-grid single-subsection"
+    >
+      <a [routerLink]="subsection.route" class="tile subsection-tile" [ngClass]="subsection.color">
+        <div class="tile-icon">{{ subsection.icon }}</div>
+        <div class="tile-label">{{ subsection.title }}</div>
+      </a>
+    </div>
+  </ng-container>
+</div>

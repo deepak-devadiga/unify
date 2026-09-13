@@ -1,0 +1,29 @@
+<div class="home-container">
+  <div class="home-header">
+    <h2>Welcome to Tools Shell</h2>
+    <p>Select a module to get started</p>
+  </div>
+
+  @if (sections().length > 0) {
+    <div class="home-sections">
+      @for (section of sections(); track section.id) {
+        <div class="home-section">
+          <h3>{{ section.title }}</h3>
+          <p>{{ section.description }}</p>
+
+          <!-- ADD THIS WRAPPER -->
+          <div class="tiles-grid">
+            @for (tile of section.tile; track tile.id) {
+              <div class="home-tiles" [ngClass]="tile.color">
+                <a [routerLink]="['/module', tile.id]" class="home-tile">
+                  <h4>{{ tile.title }}</h4>
+                  <p>{{ tile.description }}</p>
+                </a>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

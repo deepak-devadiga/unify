@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Modern Minimalist Design */
+
+/* Import Quicksand Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Color Palette */
+:root {
+  --primary: #03f7eb;
+  --secondary: #00b295;
+  --tertiary: #c9daea;
+  --dark: #191516;
+  --accent: #ab2346;
+  --light: #ffffff;
+  --border: #e8e8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Quicksand',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Helvetica Neue',
+    sans-serif;
+  background-color: #fafafa;
+  color: var(--dark);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: var(--secondary);
+  }
+}

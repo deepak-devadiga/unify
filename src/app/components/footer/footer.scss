@@ -1,0 +1,32 @@
+.app-footer {
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: 1rem 0.5rem;
+  border-top: 2px solid var(--primary);
+  flex-shrink: 0;
+  width: 100%;
+
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+
+    .footer-text {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    padding: 2rem 1.5rem;
+
+    .footer-container .footer-text {
+      font-size: 0.95rem;
+    }
+  }
+}

@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -18,20 +19,26 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "."
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"],
+            "main": "src/main.ts",
+            "outputPath": "dist/tools-shell",
+            "index": "src/index.html",
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
+            "commonChunk": false,
+            "extractLicenses": false
           },
           "configurations": {
             "production": {
@@ -47,7 +54,10 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "customWebpackConfig": {
+                "path": "webpack.prod.config.js"
+              }
             },
             "development": {
               "optimization": false,
@@ -58,7 +68,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "tools-shell:build:production"
@@ -67,7 +77,14 @@
               "buildTarget": "tools-shell:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4200,
+            "publicHost": "http://localhost:4200",
+            "headers": {
+              "Access-Control-Allow-Origin": "*"
+            }
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
