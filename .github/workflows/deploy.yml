@@ -42,7 +42,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist/tools-shell/browser
+          path: ./dist/tools-shell
 
   deploy:
     runs-on: ubuntu-latest
