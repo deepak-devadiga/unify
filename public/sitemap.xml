@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://YOUR-DOMAIN/</loc>
+    <loc>https://deepak-devadiga.github.io/unify/</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-DOMAIN/tools/json</loc>
+    <loc>https://deepak-devadiga.github.io/unify/tools/json</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-DOMAIN/tools/uuid</loc>
+    <loc>https://deepak-devadiga.github.io/unify/tools/uuid</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-DOMAIN/tools/base64</loc>
+    <loc>https://deepak-devadiga.github.io/unify/tools/base64</loc>
   </url>
 
 </urlset>
