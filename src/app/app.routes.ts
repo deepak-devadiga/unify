@@ -10,4 +10,8 @@ export const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path: 'word-to-pdf',
+    loadChildren: () => import('wordToPdf/Module').then((m) => m.WordToPdfModule),
+  },
 ];

@@ -39,6 +39,7 @@ export class HomeComponent {
           description: 'Description for Tile 1',
           icon: 'icon-1',
           color: 'color-1',
+          route: '/word-to-pdf',
         },
         {
           id: uuidv4(),
